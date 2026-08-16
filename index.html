@@ -84,8 +84,8 @@ body{background:var(--dark);color:var(--ivory);font-family:'Jost',sans-serif;ove
 
 /* ── SPLIT ── */
 .split{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;align-items:stretch}
-@media(max-width:650px){.split,.grid2{grid-template-columns:1fr}.split .sp-ph{min-height:100vw}}
-.sp-ph{position:relative;overflow:hidden;min-height:100vh}
+@media(max-width:650px){.split,.grid2{grid-template-columns:1fr}.split .sp-ph{min-height:80vw}}
+.sp-ph{position:relative;overflow:hidden;min-height:50vw}
 .sp-txt{background:var(--wine);display:flex;align-items:center;justify-content:center;padding:4rem 3rem;text-align:center}
 .sp-in{max-width:320px}
 .sp-lbl{font-family:'Jost',sans-serif;font-weight:200;font-size:.57rem;letter-spacing:.4em;color:rgba(251,248,241,.42);text-transform:uppercase;margin-bottom:1.6rem}
@@ -261,29 +261,34 @@ body{background:var(--dark);color:var(--ivory);font-family:'Jost',sans-serif;ove
   #bgHero{background-size:contain!important;background-position:center center!important;background-color:var(--dark)}
 
   /* Full-width photo section */
-  .photo-full{height:auto;aspect-ratio:3/4}
-  .photo-full .bg{background-size:contain!important;background-position:center center!important;background-color:var(--dark)}
+  .photo-full{height:auto;aspect-ratio:4/5}
+  .photo-full .bg{background-size:cover!important;background-position:center center!important}
 
-  /* Grid cells: portrait containers, full photo visible */
+  /* Grid cells: portrait containers, cover for clean look */
   .grid2{height:auto;grid-template-rows:auto}
-  .grid-cell{aspect-ratio:3/4;background-color:var(--dark)}
-  .grid-cell .bg{background-size:contain!important;background-position:center center!important}
+  .grid-cell{aspect-ratio:3/4}
+  .grid-cell .bg{background-size:cover!important;background-position:center center!important}
 
   /* Trio: portrait cells */
   .photo-trio{height:auto}
   .photo-trio .grid-cell{aspect-ratio:3/4}
+  .photo-trio .grid-cell .bg{background-size:cover!important}
   .photo-trio .right-col .grid-cell{aspect-ratio:1/1}
 
   /* Pool / venue photo */
-  #bgPool{background-size:contain!important;background-position:center center!important;background-color:var(--dark)}
+  #bgPool{background-size:cover!important;background-position:center center!important}
 
   /* Footer photo */
-  .footer-ph{height:auto;aspect-ratio:3/4}
+  .footer-ph{height:auto;aspect-ratio:16/9}
+
+  /* RSVP padding fix for mobile */
+  .rsvp-wrap{padding:3.5rem 1.5rem}
 }
 
 /* Desktop: hero uses cover with good position to show faces */
 @media(min-width:769px){
   #bgHero{background-size:cover;background-position:center 30%}
+  .sp-ph{min-height:100vh}
 }
 
 </style>
